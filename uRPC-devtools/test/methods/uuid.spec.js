@@ -11,8 +11,8 @@ describe('RPC => Utils => UUID Namespace', () => {
     const compiled = schemaService.compile(method.responseDefinition.schema);
     const checkResponse = response => {
       const result = compiled.validate(response);
-      expect(result.valid).to.be.true;
       expect(result.errors).to.be.undefined;
+      expect(result.valid).to.be.true;
     };
     it('should create one by default', async () => {
       const response = await method.handle({});
