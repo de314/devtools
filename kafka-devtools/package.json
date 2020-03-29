@@ -4,7 +4,7 @@
   "description": "Developer Enablement Tools for Kafka",
   "main": "src/main.js",
   "scripts": {
-    "test": "mocha -R spec test/**/*.spec.js"
+    "test": "mocha --recursive"
   },
   "author": "david@fartech.dev",
   "license": "MIT",
