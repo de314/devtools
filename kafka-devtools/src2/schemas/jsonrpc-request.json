@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "jsonrpc": {
+      "const": "2.0"
+    },
+    "method": {
+      "type": "string",
+      "pattern": "^[\\w.-]+$"
+    },
+    "params": {
+      "type": ["null", "boolean", "object", "array", "number", "string"]
+    },
+    "id": {
+      "type": "string"
+    }
+  },
+  "required": ["jsonrpc", "method", "params"]
+}
