@@ -80,13 +80,14 @@ const spec = [
         const { data, headers, status, statusText } = await axios(params);
         return { data, headers, status, statusText };
       } catch (err) {
-        console.error('Failed rest request', err);
-        return {
-          data: null,
-          headers: null,
-          status: 'NO REQUEST',
-          statusCode: 499,
-        };
+        // console.error('Failed rest request', err);
+        const {
+          data = null,
+          headers = null,
+          status = 499,
+          statusText = 'No Request',
+        } = err.response || {};
+        return { data, headers, status, statusText };
       }
     },
   },

@@ -14,6 +14,17 @@ describe('RPC => Rest Namespace', () => {
       expect(result.errors).to.be.undefined;
       expect(result.valid).to.be.true;
     };
+    it('should fail invalid request', async () => {
+      const params = { url: 'not a read url :(' };
+      const response = await method.handle(params);
+      checkResponse(response);
+      expect(response).to.deep.equal({
+        data: null,
+        headers: null,
+        status: 499,
+        statusText: 'No Request',
+      });
+    });
     it('should make live request', async () => {
       const params = {
         url: 'https://postman-echo.com/post',
@@ -48,6 +59,17 @@ describe('RPC => Rest Namespace', () => {
         },
         status: 200,
         statusText: 'OK',
+      });
+    });
+    it('should fail 404 live request', async () => {
+      const params = { url: 'https://postman-echo.com/not-a-real-method' };
+      const response = await method.handle(params);
+      checkResponse(response);
+      delete response.headers;
+      expect(response).to.deep.equal({
+        data: '',
+        status: 404,
+        statusText: 'Not Found',
       });
     });
   });
