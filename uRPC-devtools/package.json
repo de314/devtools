@@ -1,0 +1,18 @@
+{
+  "name": "urpc-devtools",
+  "version": "0.1.0",
+  "description": "JsonRPC implementation leveraging JsonSchema for input and output validation.",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "david@fartech.dev",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^6.12.0",
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "mocha": "^7.1.1",
+    "uuid": "^7.0.2"
+  }
+}
