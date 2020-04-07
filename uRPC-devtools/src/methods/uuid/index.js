@@ -1,8 +1,9 @@
+const { rpcRegistry } = require('../../RpcRegistry');
 const { v1: uuidv1, v4: uuidv4 } = require('uuid');
 
 const UUID_PATTERN = '^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$';
 
-const getHandle = uuidFunc => async params => {
+const getHandle = (uuidFunc) => async (params) => {
   const { count = 1 } = params;
   const result = [];
   for (let i = 0; i < count; i++) {
@@ -83,5 +84,7 @@ const spec = [
     handle: getHandle(uuidv4),
   },
 ];
+
+rpcRegistry.registerAll(spec);
 
 module.exports = spec;

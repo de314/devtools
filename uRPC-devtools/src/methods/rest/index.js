@@ -1,9 +1,10 @@
+const { rpcRegistry } = require('../../RpcRegistry');
 // TODO: Setup a way to mock this.
 const axios = require('axios');
 
 const spec = [
   {
-    key: 'rest.execute',
+    key: 'web.rest.execute',
     description: 'Execute REST API Call using Axios compliant params',
     requestDefinition: {
       schema: {
@@ -92,5 +93,7 @@ const spec = [
     },
   },
 ];
+
+rpcRegistry.registerAll(spec);
 
 module.exports = spec;

@@ -4,7 +4,15 @@
   "description": "JsonRPC implementation leveraging JsonSchema for input and output validation.",
   "main": "src/main.js",
   "scripts": {
+    "dev": "PORT=3001 nodemon src/main.js",
     "test": "mocha --recursive"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "delay": "2500"
   },
   "author": "david@fartech.dev",
   "license": "MIT",
@@ -12,8 +20,14 @@
     "ajv": "^6.12.0",
     "axios": "^0.19.2",
     "chai": "^4.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "lowdb": "^1.0.0",
     "mocha": "^7.1.1",
     "uuid": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
