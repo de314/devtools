@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "@grpc/proto-loader": "^0.5.3",
-    "ajv": "^6.12.0",
+    "ajv": "^6.12.3",
     "chai": "^4.2.0",
     "grpc": "^1.24.2",
     "mocha": "^7.1.1",
