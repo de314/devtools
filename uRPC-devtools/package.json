@@ -17,7 +17,7 @@
   "author": "david@fartech.dev",
   "license": "MIT",
   "dependencies": {
-    "ajv": "^6.12.0",
+    "ajv": "^6.12.3",
     "axios": "^0.19.2",
     "chai": "^4.2.0",
     "cors": "^2.8.5",
